@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/PedroMoreno07/Introducao-api-rest/issues"
   },
-  "homepage": "https://github.com/PedroMoreno07/Introducao-api-rest#readme"
+  "homepage": "https://github.com/PedroMoreno07/Introducao-api-rest#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }

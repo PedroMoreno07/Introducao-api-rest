@@ -31,7 +31,7 @@ app.put("/usuario/:id", (req, res) => {
     return usuario.id == id;
   });
   if (indice === -1) {
-    res.status(404);
+    return res.status(404).json({ mensagem: "usuario não encontrado!" });
   }
 
   usuarios[indice].nome = novoNome;
@@ -48,7 +48,7 @@ app.delete("/usuarios/:id", (req, res) => {
   });
 
   if (index === -1) {
-    res.send("Usuário não encontrado!");
+    res.status(404).json({ mensagem: "Usuário não encontrado!" });
   } else {
     usuarios.splice(index, 1);
     res.send(usuarios);

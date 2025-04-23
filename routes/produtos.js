@@ -51,5 +51,16 @@ router.delete("/produtos/:id", (req, res) => {
     res.send(produtos);
   }
 });
-
+router.get("/produto/:id", (req, res) => {
+  const { id } = req.params;
+  const index = produtos.findIndex((produto) => {
+    return produto.id == parseInt(id);
+  });
+  const produtoBuscado = produtos[index];
+  if (index === -1) {
+    res.status(404).json({ mensagem: "Produto não encontrado!" });
+  } else {
+    res.send(produtoBuscado);
+  }
+});
 export default router;
